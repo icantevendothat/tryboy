@@ -1,0 +1,358 @@
+@font-face {
+    font-family: 'EHSMB';
+    src: url('EHSMB.TTF') format('truetype');
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;  
+    justify-content: center; 
+    align-items: center;
+    background-color: #fcf8f9;
+}
+
+.container {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.7s ease;
+    overflow: hidden;
+    background: url('media/bggg.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.container.expanded {
+    width: 250px;
+    height: 250px;
+}
+
+.text {
+    position: absolute;
+    width: 100%;
+    top: 20px;
+    text-align: center;
+    color:#fcf8f9;
+    font-size: 30px;
+    font-family: 'EHSMB', Arial, sans-serif;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+}
+
+.heart-image {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+}
+
+.container.expanded .text {
+    opacity: 1;
+}
+
+.bounce {
+    display: inline-block;
+    animation: bounce 1s infinite;
+}
+
+.bounce-delay {
+    animation-delay: 0.1s;
+}
+
+.circle-container {
+    position: absolute;
+    bottom: 20px;
+    left: 80%;
+    transform: translateX(-50%);
+    perspective: 1000px;
+    z-index: 2;
+    opacity: 0;
+}
+
+.container.expanded .circle-container {
+    opacity: 1;
+    transition: opacity 0.7s ease 0.3s;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border: 4px dashed #fcf8f9;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: wiggle 1s infinite;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.circle.spinning {
+    animation: flip 5s ease-out;
+}
+
+.boy-image {
+    width: 105%;
+    height: 105%;
+    object-fit: contain;
+}
+
+.prompt {
+    position: absolute;
+    inset: 0;
+    background: rgba(251, 244, 244, 0.9);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'EHSMB';
+    padding: 20px;
+    color: #c44858;
+    font-size: 18px;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+}
+
+.prompt.show {
+    opacity: 1;
+}
+
+.message {
+    font-family: 'EHSMB', Arial, sans-serif;
+    color: #c44858;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 40px; 
+    opacity: 0;
+    transition: opacity 0.7s ease 0.5s;
+}
+
+.container.expanded + .message {
+    opacity: 1;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: translateX(-50%) rotate(0deg); }
+    25% { transform: translateX(-50%) rotate(-5deg); }
+    75% { transform: translateX(-50%) rotate(5deg); }
+}
+
+@keyframes flip {
+    0% { transform: translateX(-50%) rotateY(0); }
+    100% { transform: translateX(-50%) rotateY(1800deg); }
+}
+
+@font-face {
+    font-family: 'EHSMB';
+    src: url('EHSMB.TTF') format('truetype');
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;  
+    justify-content: center; 
+    align-items: center;  
+    background-color: #fcf8f9;
+}
+
+.container {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.7s ease;
+    overflow: hidden;
+    background: url('media/bggg.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.container.expanded {
+    width: 250px;
+    height: 250px;
+}
+
+.text {
+    position: absolute;
+    width: 100%;
+    top: 20px;
+    text-align: center;
+    color:#fcf8f9;
+    font-size: 30px;
+    font-family: 'EHSMB', Arial, sans-serif;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+}
+
+.heart-image {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+}
+
+.container.expanded .text {
+    opacity: 1;
+}
+
+.bounce {
+    display: inline-block;
+    animation: bounce 1s infinite;
+}
+
+.bounce-delay {
+    animation-delay: 0.1s;
+}
+
+.circle-container {
+    position: absolute;
+    bottom: 20px;
+    left: 80%;
+    transform: translateX(-50%);
+    perspective: 1000px;
+    z-index: 2;
+    opacity: 0;
+}
+
+.container.expanded .circle-container {
+    opacity: 1;
+    transition: opacity 0.7s ease 0.3s;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border: 4px dashed #fcf8f9;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: wiggle 1s infinite;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.circle.spinning {
+    animation: flip 5s ease-out;
+}
+
+.boy-image {
+    width: 105%;
+    height: 105%;
+    object-fit: contain;
+}
+
+.prompt {
+    position: absolute;
+    inset: 0;
+    background: rgba(251, 244, 244, 0.9);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'EHSMB';
+    padding: 20px;
+    color: #c44858;
+    font-size: 18px;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+}
+
+.prompt.show {
+    opacity: 1;
+}
+
+.message {
+    font-family: 'EHSMB', Arial, sans-serif;
+    color: #c44858;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 40px; 
+    opacity: 0;
+    transition: opacity 0.7s ease 0.5s;
+}
+
+.container.expanded + .message {
+    opacity: 1;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: translateX(-50%) rotate(0deg); }
+    25% { transform: translateX(-50%) rotate(-5deg); }
+    75% { transform: translateX(-50%) rotate(5deg); }
+}
+
+@keyframes flip {
+    0% { transform: translateX(-50%) rotateY(0); }
+    100% { transform: translateX(-50%) rotateY(1800deg); }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 135px;
+        height: 135px;
+    }
+    
+    .container.expanded {
+        width: 337.5px;
+        height: 337.5px;
+    }
+    
+    .text {
+        font-size: 40.5px;
+    }
+    
+    .heart-image {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .circle {
+        width: 202.5px;
+        height: 202.5px;
+        margin-bottom: 20px;
+    }
+    
+    .boy-image {
+        width: 90%;
+        height: 90%;
+    }
+    
+    .prompt {
+        font-size: 24.3px;
+        padding: 27px;
+    }
+    
+    .message {
+        font-size: 24.3px;
+        margin-top: 54px;
+    }    
+}
+
+
+
