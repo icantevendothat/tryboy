@@ -3,6 +3,57 @@
     src: url('EHSMB.TTF') format('truetype');
 }
 
+heart-border-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Create four different border elements */
+.heart-border-top,
+.heart-border-bottom,
+.heart-border-left,
+.heart-border-right {
+    position: absolute;
+    background: url('media/pinkheart.png') repeat;
+    background-size: 30px 30px;
+}
+
+.heart-border-top,
+.heart-border-bottom {
+    left: 0;
+    right: 0;
+    height: 30px;
+}
+
+.heart-border-left,
+.heart-border-right {
+    top: 0;
+    bottom: 0;
+    width: 30px;
+}
+
+.heart-border-top {
+    top: 0;
+}
+
+.heart-border-bottom {
+    bottom: 0;
+}
+
+.heart-border-left {
+    left: 0;
+}
+
+.heart-border-right {
+    right: 0;
+}
+
+
 body {
     margin: 0;
     min-height: 100vh;
@@ -102,32 +153,9 @@ body {
     object-fit: contain;
 }
 
-.prompt {
-    position: absolute;
-    inset: 0;
-    background: rgba(251, 244, 244, 0.9);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'EHSMB';
-    padding: 20px;
-    color: #c44858;
-    font-size: 18px;
-    text-align: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 3;
-}
-
-.prompt.show {
-    opacity: 1;
-}
-
 .message {
     font-family: 'EHSMB', Arial, sans-serif;
-    color: #c44858;
+    color: d43b55;
     font-size: 18px;
     text-align: center;
     margin-top: 40px; 
@@ -269,7 +297,7 @@ body {
     justify-content: center;
     font-family: 'EHSMB';
     padding: 20px;
-    color: #c44858;
+    color: #d43b55;
     font-size: 18px;
     text-align: center;
     opacity: 0;
@@ -282,9 +310,62 @@ body {
     opacity: 1;
 }
 
+.prompt-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    position: absolute;
+    inset: 0;
+    background: rgba(251, 244, 244, 0.9);
+    border-radius: 8px;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+}
+
+.prompt-container.show {
+    opacity: 1;
+}
+
+.prompt-icon {
+    width: 30px;
+    height: auto;
+    opacity: 0;
+}
+
+.prompt-icon.bounce {
+    animation: promptIconBounce 0.8s ease forwards;
+}
+
+.prompt-text {
+    font-family: 'EHSMB';
+    color: #d43b55;
+    font-size: 18px;
+    text-align: center;
+}
+
+@keyframes promptIconBounce {
+    0% { 
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    60% { 
+        transform: translateY(5px);
+        opacity: 0.8;
+    }
+    100% { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
 .message {
     font-family: 'EHSMB', Arial, sans-serif;
-    color: #c44858;
+    color: #d43b55;
     font-size: 18px;
     text-align: center;
     margin-top: 40px; 
@@ -343,13 +424,21 @@ body {
         height: 90%;
     }
     
-    .prompt {
-        font-size: 24.3px;
+    .prompt-container {
         padding: 27px;
     }
     
-    .message {
+    .prompt-icon {
+        width: 50px;
+        height: auto;
+    }
+    
+    .prompt-text {
         font-size: 24.3px;
+    }
+    
+    .message {
+        font-size: 20px;
         margin-top: 54px;
     }    
 }
