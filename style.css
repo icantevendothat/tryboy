@@ -263,8 +263,8 @@ body {
     }
     
     .container.expanded {
-        width: 337.5px;
-        height: 337.5px;
+        width: 300px;
+        height: 300px;
     }
     
     .text {
