@@ -268,7 +268,7 @@ body {
     }
     
     .text {
-        font-size: 40.5px;
+        font-size: 35px;
     }
     
     .heart-image {
@@ -277,9 +277,9 @@ body {
     }
     
     .circle {
-        width: 202.5px;
-        height: 202.5px;
-        margin-bottom: 20px;
+        width: 175px;
+        height: 175px;
+        margin-bottom: 15px;
     }
     
     .boy-image {
